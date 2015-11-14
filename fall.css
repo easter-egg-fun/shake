@@ -1,4 +1,7 @@
 .front-container-fall {
+    z-index: 1000;
+    position: relative;
+
     -webkit-animation-name: rotate;
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: 1;
@@ -9,25 +12,27 @@
     0% {
         -webkit-transform: rotate(0deg);
     }
-    50% {
+    30% {
         -webkit-transform: rotate(30deg);
     }
-    60% {
+    40% {
         top: 10px;
     }
-    70% {
+    50% {
         top: 80px;
     }
-    80% {
+    60% {
         top: 150px;
     }
-    90% {
+    70% {
         top: 400px;
     }
-    100% {
-        position: relative;
+    80% {
         top: 1000px;
+    }
+    100% {
         background: white;
+        top: 2000px;
         z-index: 100;
     }
 }

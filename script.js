@@ -21,20 +21,27 @@
     function stopShaking (element) {
 
         setTimeout(function () {
-            var newClasses = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
-            var child = element.getElementsByClassName('fc-item')[0];
+            var newClasses  = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
+            var child       = element.getElementsByClassName('fc-item')[0];
 
             element.className = newClasses
 
-        }, 3000)
+        }, 2000)
     }
 
-    function shakeOnHover (event) {
-        var elem = this;
+    function shakeOnHover (event, element) {
+        var elem = this || element;
 
         elem.className += " shake-front-container"
 
         stopShaking(elem);
+    }
+
+    function activateShake (element, time) {
+        setTimeout( function () {
+
+            shakeOnHover(null, element);
+        }, time);
     }
 
     document.onkeypress = function(e) {
@@ -46,16 +53,26 @@
             typedKeys.push(charCode);
 
             if (arraysAreEqual( typedKeys, keyCombo )) {
-                var containers = document.getElementsByClassName("fc-item");
-                var firstContainer = containers[0];
+                var containers          = document.getElementsByClassName("fc-item");
+                var firstContainer      = containers[0];
+                var timeToFall          = 0;
+                var containersLength    = containers.length;
                 var i;
 
                 firstContainer.className += " shake-front-container";
-
                 stopShaking(firstContainer);
 
-                for (i = containers.length - 1; i >= 0; i--) {
+                for (i = 0; i < containersLength ; i++) {
+                    if (i < 2) {
+                        timeToFall += 2000;
+                    } else if ( i > 5 ) {
+                        timeToFall += 500;
+                    } else {
+                         timeToFall += 1500;
+                    }
+
                     containers[i].addEventListener("mouseover", shakeOnHover, false);
+                    activateShake(containers[i], timeToFall)
                 };
             }
         }
