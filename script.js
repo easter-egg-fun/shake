@@ -18,20 +18,23 @@
         return true;
     }
 
+    function stopShaking (element) {
+
+        setTimeout(function () {
+            var newClasses = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
+            var child = element.getElementsByClassName('fc-item')[0];
+
+            element.className = newClasses
+
+        }, 3000)
+    }
+
     function shakeOnHover (event) {
         var elem = this;
 
         elem.className += " shake-front-container"
 
-        setTimeout(function () {
-            var newClasses = elem.className.replace(/\bshake-front-container\b/,'testing2');
-            var child = elem.getElementsByClassName('fc-item')[0];
-            if (child) {
-                child.className += ' testing3';
-            }
-
-            elem.className = newClasses
-        }, 3000)
+        stopShaking(elem);
     }
 
     document.onkeypress = function(e) {
@@ -48,6 +51,8 @@
                 var i;
 
                 firstContainer.className += " shake-front-container";
+
+                stopShaking(firstContainer);
 
                 for (i = containers.length - 1; i >= 0; i--) {
                     containers[i].addEventListener("mouseover", shakeOnHover, false);

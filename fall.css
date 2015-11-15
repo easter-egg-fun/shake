@@ -1,5 +1,4 @@
-
-.testing1 {
+.front-container-fall {
     -webkit-animation-name: rotate;
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: 1;
@@ -12,38 +11,23 @@
     }
     50% {
         -webkit-transform: rotate(30deg);
-        position: relative;
     }
     60% {
         top: 10px;
     }
     70% {
-        top: 70px;
+        top: 80px;
     }
     80% {
-        top: 140px;
+        top: 150px;
     }
     90% {
-        top: 300px;
+        top: 400px;
     }
     100% {
-        position: absolute;
-        top: 800px;
+        position: relative;
+        top: 1000px;
         background: white;
+        z-index: 100;
     }
 }
-
-.testing2 {
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 4s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode: forwards;
-}
-
-.testing3 {
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode: forwards;
-}
-
