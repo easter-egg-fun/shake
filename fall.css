@@ -1,0 +1,49 @@
+
+.testing1 {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(30deg);
+        position: relative;
+    }
+    60% {
+        top: 10px;
+    }
+    70% {
+        top: 70px;
+    }
+    80% {
+        top: 140px;
+    }
+    90% {
+        top: 300px;
+    }
+    100% {
+        position: absolute;
+        top: 800px;
+        background: white;
+    }
+}
+
+.testing2 {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.testing3 {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
