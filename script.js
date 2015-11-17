@@ -25,7 +25,7 @@
 
         setTimeout(function () {
             var newClasses = elem.className.replace(/\bshake-front-container\b/,'testing2');
-            var child = elem.getElementsByClassName('fc-item__content')[0];
+            var child = elem.getElementsByClassName('fc-item')[0];
             if (child) {
                 child.className += ' testing3';
             }
@@ -43,7 +43,7 @@
             typedKeys.push(charCode);
 
             if (arraysAreEqual( typedKeys, keyCombo )) {
-                var containers = document.getElementsByClassName("fc-item__container");
+                var containers = document.getElementsByClassName("fc-item");
                 var firstContainer = containers[0];
                 var i;
 
