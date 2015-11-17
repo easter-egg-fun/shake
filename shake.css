@@ -1,4 +1,4 @@
-.fc-item:hover {
+.shake-front-container {
 	-moz-animation-name: spaceboots;
 	-moz-animation-duration: 0.8s;
 	-moz-transform-origin:50% 50%;
