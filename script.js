@@ -8,14 +8,25 @@
         if (a.length != b.length) {
             return false;
         }
-    
+
         for (var i=0; i<a.length; i++) {
             if (a[i] != b[i]) {
                 return false;
             }
         }
-    
+
         return true;
+    }
+
+    function stopShaking (element) {
+
+        setTimeout(function () {
+            var newClasses = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
+            var child = element.getElementsByClassName('fc-item')[0];
+
+            element.className = newClasses
+
+        }, 3000)
     }
 
     function shakeOnHover (event) {
@@ -23,11 +34,7 @@
 
         elem.className += " shake-front-container"
 
-        setTimeout(function () {
-            var newClasses = elem.className.replace(/\bshake-front-container\b/,'');
-
-            elem.className = newClasses
-        }, 3000)
+        stopShaking(elem);
     }
 
     document.onkeypress = function(e) {
@@ -39,11 +46,13 @@
             typedKeys.push(charCode);
 
             if (arraysAreEqual( typedKeys, keyCombo )) {
-                var containers = document.getElementsByClassName("fc-item__container");
+                var containers = document.getElementsByClassName("fc-item");
                 var firstContainer = containers[0];
                 var i;
 
                 firstContainer.className += " shake-front-container";
+
+                stopShaking(firstContainer);
 
                 for (i = containers.length - 1; i >= 0; i--) {
                     containers[i].addEventListener("mouseover", shakeOnHover, false);
