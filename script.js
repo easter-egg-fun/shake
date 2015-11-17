@@ -18,6 +18,18 @@
         return true;
     }
 
+    function shakeOnHover (event) {
+        var elem = this;
+
+        elem.className += " shake-front-container"
+
+        setTimeout(function () {
+            var newClasses = elem.className.replace(/\bshake-front-container\b/,'');
+
+            elem.className = newClasses
+        }, 3000)
+    }
+
     document.onkeypress = function(e) {
         e = e || window.event;
 
@@ -31,10 +43,10 @@
                 var firstContainer = containers[0];
                 var i;
 
-                firstContainer.className += " shake-first-front-container";
+                firstContainer.className += " shake-front-container";
 
                 for (i = containers.length - 1; i >= 0; i--) {
-                    containers[i].className += " shake-front-container"
+                    containers[i].addEventListener("mouseover", shakeOnHover, false);
                 };
             }
         }
