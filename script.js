@@ -24,7 +24,11 @@
         elem.className += " shake-front-container"
 
         setTimeout(function () {
-            var newClasses = elem.className.replace(/\bshake-front-container\b/,'');
+            var newClasses = elem.className.replace(/\bshake-front-container\b/,'testing2');
+            var child = elem.getElementsByClassName('fc-item__content')[0];
+            if (child) {
+                child.className += ' testing3';
+            }
 
             elem.className = newClasses
         }, 3000)
