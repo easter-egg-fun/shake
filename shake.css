@@ -1,18 +1,15 @@
-.fc-item__container:hover {
-	display: inline-block !important;
-	position: relative !important;
-	
-	-moz-animation-name: spaceboots !important;
-	-moz-animation-duration: 0.8s !important;
-	-moz-transform-origin:50% 50% !important;
-	-moz-animation-iteration-count: infinite !important;
-	-moz-animation-timing-function: linear !important;
+.fc-item:hover {
+	-moz-animation-name: spaceboots;
+	-moz-animation-duration: 0.8s;
+	-moz-transform-origin:50% 50%;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
 
-	-webkit-animation-name: spaceboots !important;
-	-webkit-animation-duration: 0.8s !important;
-	-webkit-transform-origin:50% 50% !important;
-	-webkit-animation-iteration-count: infinite !important;
-	-webkit-animation-timing-function: linear !important;
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
 }
 
 @-moz-keyframes spaceboots {
