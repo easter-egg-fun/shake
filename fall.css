@@ -10,14 +10,48 @@ li.no-borders::before {
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-name: moz-rotate;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes rotate {
     0% {
-        -webkit-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);    
     }
     30% {
         -webkit-transform: rotate(30deg);
+    }
+    40% {
+        top: 10px;
+    }
+    50% {
+        top: 80px;
+    }
+    60% {
+        top: 150px;
+    }
+    70% {
+        top: 400px;
+    }
+    80% {
+        top: 1000px;
+    }
+    100% {
+        background: white;
+        top: 2000px;
+        z-index: 100;
+    }
+}
+
+@-moz-keyframes rotate {
+    0% {
+        -moz-transform: rotate(0deg);    
+    }
+    30% {
+        -moz-transform: rotate(30deg);
     }
     40% {
         top: 10px;
