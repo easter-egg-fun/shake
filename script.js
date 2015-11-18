@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var keyCombo = [116, 101, 115, 116] // T E S T
+    var keyCombo = [116, 101, 115, 116]; // T E S T
     var typedKeys = [];
 
     function arraysAreEqual (a, b) {
@@ -25,9 +25,9 @@
             var parent = element.parentNode;
 
             parent.className += " no-borders front-container-fall";
-            element.className = newClasses
+            element.className = newClasses;
 
-        }, 2000)
+        }, 2000);
     }
 
     function shakeOnHover (event, element) {
@@ -46,14 +46,24 @@
     }
 
     function injectEgg () {
-        var img     = document.createElement("img");
+        var aTag = document.createElement("a");
+        var img = document.createElement("img");
+
+        aTag.setAttribute("class", "easter-egg-container");
+        aTag.setAttribute("href", "./index.html");
+
+        img.className   = "guardian-egg";
+        img.src         = "img/egg.png";
+
         var parent  = document.getElementsByClassName("fc-container__inner")[0];
         var child   = document.getElementsByClassName("fc-container__header")[0];
 
-        img.className   = "guardian-egg"
-        img.src         = "img/egg.png";
+        parent.insertBefore(aTag, child);
 
-        parent.insertBefore(img, child);
+        var easterBasket  = document.getElementsByClassName("easter-egg-container")[0];
+        
+        easterBasket.appendChild(img);
+
     }
 
     document.onkeypress = function(e) {
@@ -90,11 +100,11 @@
                          timeToFall += 1500;
                     }
 
-                    containers[i].className += " increase-z"
+                    containers[i].className += " increase-z";
                     containerParent.className += " white-background";
                     containers[i].addEventListener("mouseover", shakeOnHover, false);
-                    activateShake(containers[i], timeToFall)
-                };
+                    activateShake(containers[i], timeToFall);
+                }
             }
         }
     };
