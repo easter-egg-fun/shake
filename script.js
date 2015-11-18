@@ -32,6 +32,8 @@
         var elem = this || element;
 
         elem.className += " shake-front-container"
+        var parent = elem.parentNode;
+        parent.className += " no-borders";
 
         stopShaking(elem);
     }
