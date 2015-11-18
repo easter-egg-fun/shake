@@ -4,6 +4,9 @@
     var keyCombo = [116, 101, 115, 116] // T E S T
     var typedKeys = [];
 
+    var elementCount = 0;
+    var egg;
+
     function arraysAreEqual (a, b) {
         if (a.length != b.length) {
             return false;
@@ -24,6 +27,12 @@
             var newClasses  = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
 
             element.className = newClasses
+            var oldEgg = 'opacity' + elementCount;
+            elementCount++;
+            var newEgg = 'opacity' + elementCount;
+            var newEggClasses = egg.className.replace(oldEgg, newEgg);
+            egg.className = newEggClasses;
+
 
         }, 2000)
     }
@@ -49,10 +58,11 @@
         var img     = document.createElement("img");
         var parent  = document.getElementsByClassName("fc-container__body")[0];
 
-        img.className   = "guardian-egg"
+        img.className   = "guardian-egg opacity0"
         img.src         = "img/egg.png";
 
         parent.appendChild(img);
+        egg = img;
     }
 
     document.onkeypress = function(e) {
