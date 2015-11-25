@@ -13,7 +13,7 @@
 }
 
 .white-background {
-    background: white;
+    background: white !important;
 }
 
 .shake-front-container {

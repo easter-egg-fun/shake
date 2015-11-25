@@ -22,7 +22,9 @@
 
         setTimeout(function () {
             var newClasses  = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
+            var parent = element.parentNode;
 
+            parent.className = parent.className.replace(/\bwhite-background\b/, "no-borders");
             element.className = newClasses
 
         }, 2000)
@@ -32,8 +34,6 @@
         var elem = this || element;
 
         elem.className += " shake-front-container"
-        var parent = elem.parentNode;
-        parent.className += " no-borders";
 
         stopShaking(elem);
     }
@@ -47,15 +47,17 @@
 
     function injectEgg () {
         var img     = document.createElement("img");
-        var parent  = document.getElementsByClassName("fc-container__body")[0];
+        var parent  = document.getElementsByClassName("fc-container__inner")[0];
+        var child   = document.getElementsByClassName("fc-container__header")[0];
 
         img.className   = "guardian-egg"
         img.src         = "img/egg.png";
 
-        parent.appendChild(img);
+        parent.insertBefore(img, child);
     }
 
     document.onkeypress = function(e) {
+
         e = e || window.event;
 
         var charCode = (typeof e.which == 'number') ? e.which : e.keyCode;
@@ -78,6 +80,8 @@
                 injectEgg();
 
                 for (i = 0; i < containersLength ; i++) {
+                    var containerParent = containers[i].parentNode;
+
                     if (i < 2) {
                         timeToFall += 2000;
                     } else if ( i > 5 ) {
@@ -87,6 +91,7 @@
                     }
 
                     containers[i].className += " increase-z"
+                    containerParent.className += " white-background";
                     containers[i].addEventListener("mouseover", shakeOnHover, false);
                     activateShake(containers[i], timeToFall)
                 };
