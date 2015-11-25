@@ -22,7 +22,6 @@
 
         setTimeout(function () {
             var newClasses  = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
-            var child       = element.getElementsByClassName('fc-item')[0];
 
             element.className = newClasses
 
