@@ -43,6 +43,16 @@
         }, time);
     }
 
+    function injectEgg () {
+        var img     = document.createElement("img");
+        var parent  = document.getElementsByClassName("fc-container__inner")[0];
+
+        img.className   = "guardian-egg"
+        img.src         = "img/egg.png";
+
+        parent.appendChild(img);
+    }
+
     document.onkeypress = function(e) {
         e = e || window.event;
 
@@ -60,6 +70,8 @@
 
                 firstContainer.className += " shake-front-container";
                 stopShaking(firstContainer);
+
+                injectEgg();
 
                 for (i = 0; i < containersLength ; i++) {
                     if (i < 2) {
