@@ -24,7 +24,7 @@
             var newClasses  = element.className.replace(/\bshake-front-container\b/,'front-container-fall');
             var parent = element.parentNode;
 
-            parent.className = parent.className.replace(/\bwhite-background\b/, "no-borders");
+            parent.className += " no-borders front-container-fall";
             element.className = newClasses
 
         }, 2000)
@@ -33,7 +33,7 @@
     function shakeOnHover (event, element) {
         var elem = this || element;
 
-        elem.className += " shake-front-container"
+        elem.className += " shake-front-container";
 
         stopShaking(elem);
     }
