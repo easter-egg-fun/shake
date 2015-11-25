@@ -6,7 +6,14 @@
     bottom: 0;
     display: block;
     width: 44%;
-    z-index: -1;
+}
+
+.increase-z {
+    z-index: 5;
+}
+
+.white-background {
+    background: white;
 }
 
 .shake-front-container {
